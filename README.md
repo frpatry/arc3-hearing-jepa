@@ -1,5 +1,7 @@
 # Listening to the Game: a Hearing JEPA World Model for ARC-AGI-3
 
+![Listening to the Game: what the model hears, gesture after gesture, until the ding](paper/fig/cover_ls20.png)
+
 Code for our **ARC Prize 2026** entry (ARC-AGI-3 track, Kaggle submission **57710722**, public LB 0.16) and its Paper Track writeup.
 
 A block-causal JEPA video world model (23.6 M parameters) **hears** a synthetic sound channel computed from the frames alone — a spatial *toc* map of where the screen changed, a *ding* when a level is won, a *buzz* on game over — as input, predicts those sounds as targets, and plans 12 imagined steps ahead toward the ding.
