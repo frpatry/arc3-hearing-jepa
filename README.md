@@ -8,7 +8,9 @@ A block-causal JEPA video world model (23.6 M parameters) **hears** a synthetic 
 
 - Paper: [`paper/writeup.md`](paper/writeup.md) · [Kaggle writeup](https://www.kaggle.com/competitions/arc-prize-2026-paper-track/writeups/listening-to-the-game-a-hearing-jepa-world-model)
 - Submission notebook: [kaggle.com/code/francoispatry/arc3-submit-critim](https://www.kaggle.com/code/francoispatry/arc3-submit-critim) (model weights: Kaggle dataset `francoispatry/arc3-jepa-critim`, file `wm_seq_critim.pt`)
-- Video, the submitted model playing vc33 with its sounds: [`paper/fig/vc33_model_sound.mp4`](paper/fig/vc33_model_sound.mp4)
+- Videos (turn the sound on):
+  - [The submitted model playing vc33, with the sounds it hears](https://youtu.be/aVcIZod-Wng) (file: [`paper/fig/vc33_model_sound.mp4`](paper/fig/vc33_model_sound.mp4))
+  - [What the model hears in ls20 (oracle replay)](https://youtu.be/bOn0MDc4X2o) (file: [`paper/fig/ls20_sound.mp4`](paper/fig/ls20_sound.mp4))
 
 ## Layout
 
