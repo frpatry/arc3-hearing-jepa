@@ -1,8 +1,4 @@
-# Listening to the Game: a Hearing JEPA World Model for ARC-AGI-3
-
-*A latent video world model that hears the consequences of its own actions, and plans in imagination toward the sound of a won level.*
-
-Submission 57710722 · public LB 0.16 · notebook `francoispatry/arc3-submit-critim` · code: [GitHub link]
+Submission **57710722** · public LB 0.16 · notebook: [arc3-submit-critim](https://www.kaggle.com/code/francoispatry/arc3-submit-critim) · code: [github.com/frpatry/arc3-hearing-jepa](https://github.com/frpatry/arc3-hearing-jepa) · video: the submitted model playing vc33 with its sounds (media gallery)
 
 ## Abstract
 
@@ -49,7 +45,7 @@ These exist for *every* game, hidden ones included: the auditory channel is univ
 | Same + inner "voice" (hears its own predicted progress, 57786538) | 0.13 |
 | Hand-written curious explorer, no learning (57590051) | 0.25 |
 
-On public games the hearing model solves vc33 level 1 in 4/4 seeds and sp80 / r11l level 1 in a 25-game simulation (r11l is a held-out game). On the first frame of 57 level starts, the distance-to-ding head ranks the right gesture top-3 in 47% of cases (random 29%).
+On public games the hearing model solves vc33 level 1 in 4/4 seeds (the video shows one run: levels 1 and 2 in 40 gestures) and sp80 / r11l level 1 in a 25-game simulation (r11l is a held-out game). On the first frame of 57 level starts, the distance-to-ding head ranks the right gesture top-3 in 47% of cases (random 29%).
 
 **Isolating hearing.** In a controlled fine-tune (3 generated families × 10 games, same model, hearing vs deaf), winning-gesture recovery was 55% vs 52% on training games, 48% vs 48% on new games of seen families, and **54% vs 48% on unseen families** (clicks: 43% vs 32%; chance 13–15%), with no change in next-frame error. Hearing does not make prediction better; it makes the model better at **finding the gesture that matters in a world it has never seen**. We did not run a matched deaf version of the submitted model, which is the main limitation of this paper.
 
@@ -57,7 +53,7 @@ On public games the hearing model solves vc33 level 1 in 4/4 seeds and sp80 / r1
 
 1. **Judges die in imagination.** The critic recognizes the end of a level on real frames (AUC ≈ 1.0) but, on unseen games, its imagined ding stays at 0.005–0.04 even 8 steps before a real win. When the right sequence ends a level, real frames rank it 1st–2nd among the candidates; imagined frames rank it 22nd–35th. Long imagination loses exactly the rare event the plan is aimed at.
 2. **No sound in the middle of a level.** Mid-level, even real frames rank the right sequence at chance. A learned progress sound ("heat") reached AUC 0.88 on new games of *seen* families but 0.56 and 0.44 on official games. Generators copy mechanics, not goals.
-3. **Winning screens are nearly unique.** Pre-win screens are near-unique by construction; 0% of the pre-win screens our explorer reached had been seen in training. A model that memorizes states cannot recognize a win it has never heard; variety must come from the path, not the final state.
+3. **Winning screens are nearly unique.** Pre-win screens are near-unique by construction; 0% of the pre-win screens our explorer reached appeared in our recorded winning paths. A model that memorizes states cannot recognize a win it has never heard; variety must come from the path, not the final state.
 4. **Learning in-game hurt.** Freezing the model solved vc33 level 2 in 4/4 seeds versus 0–2/4 with in-game updates, and ran 7× faster. Online updates destabilized more than they adapted.
 
 ## 5. Why sound, and what next
